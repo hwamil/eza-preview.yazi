@@ -18,7 +18,7 @@ end)
 
 local set_opts = ya.sync(function(state, opts)
 	if state.opts == nil then
-		state.opts = { level = 3, follow_symlinks = false, dereference = false }
+		state.opts = { level = 3, follow_symlinks = false, dereference = false, all = true }
 	end
 
 	for key, value in pairs(opts or {}) do
@@ -71,7 +71,6 @@ function M:peek(job)
 	local opts = get_opts()
 
 	local args = {
-		"--all",
 		"--color=always",
 		"--icons=always",
 		"--group-directories-first",
@@ -87,6 +86,10 @@ function M:peek(job)
 	if opts then
 		if opts.follow_symlinks then
 			table.insert(args, "--follow-symlinks")
+		end
+
+		if opts.all then
+			table.insert(args, "--all")
 		end
 
 		if opts.dereference then
