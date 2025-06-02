@@ -51,13 +51,13 @@ function M:setup(opts)
 end
 
 function M:entry(job)
-	local args = job.args
+	local args = string.gsub(job.args[1] or "", "^%s*(.-)%s*$", "%1")
 
-	if args["inc_level"] ~= nil then
+	if args == "inc-level" then
 		inc_level()
-	elseif args["dec_level"] ~= nil then
+	elseif args == "dec-level" then
 		dec_level()
-	elseif args["toggle_follow_symlinks"] ~= nil then
+	elseif args == "toggle-follow-symlinks" then
 		toggle_follow_symlinks()
 	else
 		set_opts()
