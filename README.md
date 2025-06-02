@@ -55,6 +55,9 @@ require("eza-preview"):setup({
 
   -- Whether to show target file info instead of symlink info (default: false)
   dereference = false
+
+  -- Whether to show hidden files (default: true) 
+  all = true
 })
 
 -- Or use default settings with empty table
