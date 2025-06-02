@@ -42,6 +42,7 @@ prepend_keymap = [
   { on = [ "-" ], run = "plugin eza-preview inc-level", desc = "Increment tree level" },
   { on = [ "_" ], run = "plugin eza-preview dec-level", desc = "Decrement tree level" },
   { on = [ "$" ], run = "plugin eza-preview toggle-follow-symlinks", desc = "Toggle tree follow symlinks" },
+  { on = [ "*" ], run = "plugin eza-preview toggle-hidden", desc = "Toggle hidden files" },
 ]
 ```
 
@@ -74,6 +75,7 @@ require("eza-preview"):setup({})
 - `plugin eza-preview inc-level` - Increase tree depth level
 - `plugin eza-preview dec-level` - Decrease tree depth level  
 - `plugin eza-preview toggle-follow-symlinks` - Toggle symlink following
+- `plugin eza-preview toggle-hidden` - Toggle hidden file visibility
 
 ## Contributing
 

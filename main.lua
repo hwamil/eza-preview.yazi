@@ -44,6 +44,10 @@ local toggle_follow_symlinks = ya.sync(function(state)
 	state.opts.follow_symlinks = not state.opts.follow_symlinks
 end)
 
+local toggle_hidden = ya.sync(function(state)
+	state.opts.all = not state.opts.all
+end)
+
 function M:setup(opts)
 	set_opts(opts)
 
@@ -59,6 +63,8 @@ function M:entry(job)
 		dec_level()
 	elseif args == "toggle-follow-symlinks" then
 		toggle_follow_symlinks()
+	elseif args == "toggle-hidden" then
+		toggle_hidden()
 	else
 		set_opts()
 		toggle_view_mode()
