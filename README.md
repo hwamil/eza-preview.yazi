@@ -10,7 +10,7 @@ Tree mode:
 
 ## Requirements
 
-- [yazi (0.4+) or nightly](https://github.com/sxyazi/yazi)
+- [yazi (25.3+) or nightly](https://github.com/sxyazi/yazi)
 - [eza (0.20+)](https://github.com/eza-community/eza)
 
 ## Installation
@@ -34,7 +34,7 @@ run = "eza-preview"
 Set key binding to switch between list and tree modes in `keymap.toml`:
 
 ```toml
-[manager]
+[mgr]
 prepend_keymap = [
   { on = [ "E" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
   { on = [ "-" ], run = "plugin eza-preview --args='--inc-level'", desc = "Increment tree level" },
